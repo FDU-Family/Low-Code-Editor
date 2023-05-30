@@ -20,7 +20,8 @@
       "unplugin-vue-macros/macros-global"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@editor/*": ["src/editor/*"]
     }
   },
   "exclude": ["dist", "node_modules"]

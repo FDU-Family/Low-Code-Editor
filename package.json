@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.1.2",
+    "lodash-es": "^4.17.21",
+    "naive-ui": "^2.34.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.1"
   },
@@ -51,6 +53,12 @@
     "extends": [
       "@antfu",
       "@unocss"
-    ]
+    ],
+    "rules": {
+      "curly": [
+        "error",
+        "all"
+      ]
+    }
   }
 }

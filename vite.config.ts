@@ -8,11 +8,14 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import { watchFile } from './plugins/vite-plugin-watch-file'
 
 export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@editor/': `${path.resolve(__dirname, 'src/editor')}/`,
     },
   },
   plugins: [
@@ -49,11 +52,20 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      dirs: ['src/editor/components'],
+      resolvers: [NaiveUiResolver()],
     }),
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     UnoCSS(),
+
+    watchFile('watch-file:msg', {
+      watchKind: ['add', 'change', 'unlink'],
+      watchFolder: [
+        'src/scripts',
+      ],
+    }),
   ],
 
   // https://github.com/vitest-dev/vitest

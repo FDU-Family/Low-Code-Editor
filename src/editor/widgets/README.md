@@ -1,0 +1,2 @@
+这里写低代码组件
+低代码组件统一命名为Widget，与Vue组件Component分开
