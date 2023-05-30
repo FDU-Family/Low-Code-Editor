@@ -4,6 +4,7 @@
 export interface WidgetProps {
   style: object
   class: Array<string>
+  [key: string]: any
 }
 
 /**
