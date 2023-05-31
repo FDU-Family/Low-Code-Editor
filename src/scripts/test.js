@@ -14,3 +14,8 @@ export function changeStyle() {
 export function addClass() {
   this.props.class.push('m-10px')
 }
+
+export function test() {
+  this.props.class.push('m-10px')
+}
+

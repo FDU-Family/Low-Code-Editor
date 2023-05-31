@@ -1,5 +1,5 @@
 /**
- *
+ * Base widget props type
  */
 export interface WidgetProps {
   style: object
@@ -15,6 +15,9 @@ export interface WidgetOptions {
   props?: WidgetProps
 }
 
+/**
+ * Base widget data type
+ */
 export interface WidgetData {
   name: string
   props: WidgetProps
@@ -27,6 +30,9 @@ export type TextOptions = WidgetOptions & {
   content?: string
 }
 
+/**
+ * Text widget data type
+ */
 export type TextData = WidgetData & {
   content: string
 }

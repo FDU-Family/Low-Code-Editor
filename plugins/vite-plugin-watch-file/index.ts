@@ -25,9 +25,14 @@ export function watchFile(eventName: string, options: WatchFileOptions) {
       server.middlewares.use('/scripts', (_, res) => {
         const arr = options.watchFolder.map((folder) => {
           // read folder files name
-          const files = readdirSync(folder)
+          const filesName = readdirSync(folder)
 
-          return { folder: files.map(fileName => path.posix.join(folder, fileName)) }
+          return {
+            folder: filesName.map(fileName => ({
+              name: path.posix.join(folder, fileName),
+              content: readFileSync(path.posix.join(folder, fileName), { encoding: 'utf-8' }),
+            })),
+          }
         })
         res.setHeader('Content-Type', 'application/json')
         res.statusCode = 200
