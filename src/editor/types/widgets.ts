@@ -1,3 +1,5 @@
+import type { ButtonType } from './enum'
+
 /**
  * Base widget props type
  */
@@ -43,10 +45,10 @@ export type TextData = WidgetData & {
 
 export type ButtonOptions = WidgetOptions & {
   content?: string
-  type?: string
+  buttonType?: ButtonType
 }
 
 export type ButtonData = WidgetData & {
   content: string
-  type: string
+  buttonType: ButtonType
 }
