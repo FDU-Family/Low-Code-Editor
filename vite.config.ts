@@ -72,4 +72,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
   },
+  // server: {
+  //   hmr: false,
+  // },
 })
