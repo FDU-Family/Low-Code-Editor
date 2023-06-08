@@ -1,6 +1,5 @@
 import type { ButtonData, ButtonOptions } from '@editor/types/widgets'
 import type { VNode } from 'vue'
-import { ButtonType } from '../types/enum'
 import { Text } from './Text'
 
 export class Button extends Text {
@@ -13,22 +12,29 @@ export class Button extends Text {
       this.data.content = option.content
     }
     else {
-      this.data.content = 'Button'
+      this.data.content = 'hello'
     }
 
-    if (option.buttonType) {
-      this.data.buttonType = option.buttonType
+    if (option.type) {
+      this.data.type = option.type
     }
     else {
-      this.data.buttonType = ButtonType.Primary
+      this.data.type = 'primary'
+    }
+
+    if (option.size) {
+      this.data.size = option.size
+    }
+    else {
+      this.data.size = 'tiny'
     }
   }
 
   static preview(): VNode {
-    return super.preview
+    return h('div', null, '按钮')
   }
 
   protected _render(): VNode {
-    return super._render
+    return h('div', this.data.props, super._render())
   }
 }

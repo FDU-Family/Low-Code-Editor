@@ -1,20 +1,15 @@
 <script setup lang="ts">
 import { difference } from 'lodash-es'
-import { Text } from './widgets/Text'
 import { Button } from './widgets/Button'
 import { useScriptStore } from './stores/ScriptStore'
-import { ButtonType } from './types/enum'
 
 // new A text widget and render
-const text = new Text({})
-const textComponent = text.render()
+// const text = new Text({})
+// const textComponent = text.render()
 
 // new A button widget and render
-const button = new Button({ content: 'button', buttonType: ButtonType.Primary })
-const buttonComponent = button.render()
-const buttonType = Object.keys(ButtonType).map(key => ({
-  label: ButtonType[key as keyof typeof ButtonType],
-}))
+const text = new Button({ content: '123', type: 'primary', size: 'small' })
+const btnComponent = text.render()
 
 const mountedFnList = ref([])
 
@@ -68,23 +63,9 @@ watch(mountedFnList,
 
 <template>
   <div>
-    <textComponent />
-    <NInput v-model:value="text.data.content" />
+    <btnComponent />
+    <NButton v-model:value="text.data.content" />
     <NDynamicTags v-model:value="text.data.props.class" />
-    <NSelect v-model:value="mountedFnList" multiple :options="ScriptStore.selectOptions" />
-  </div>
-  <br>
-  <br>
-  <br>
-  <div>
-    <buttonComponent />
-    <br>
-    <NInput v-model:value="button.data.content" />
-    <br>
-    <NSelect v-model:value="button.data.buttonType" :options="buttonType" />
-    <br>
-    <NDynamicTags v-model:value="button.data.props.class" />
-    <br>
     <NSelect v-model:value="mountedFnList" multiple :options="ScriptStore.selectOptions" />
   </div>
 </template>

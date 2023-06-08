@@ -1,9 +1,16 @@
 export enum ButtonType {
-  Primary = 'primary',
+  Default = 'default',
   Success = 'success',
   Warning = 'warning',
-  Danger = 'danger',
+  Primary = 'primary',
   Info = 'info',
-  Text = 'text',
+  Tertiary = 'tertiary',
   Error = 'error',
+}
+
+export enum ButtonSize {
+  Tiny = 'tiny',
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large',
 }
