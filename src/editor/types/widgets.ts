@@ -41,12 +41,14 @@ export type TextData = WidgetData & {
  * Button widget options type
  */
 
-export type ButtonOptions = WidgetOptions & {
+export type ButtonOptions = TextOptions & {
   content?: string
   type?: string
+  size?: string
 }
 
-export type ButtonData = WidgetData & {
+export type ButtonData = TextData & {
   content: string
   type: string
+  size: string
 }
