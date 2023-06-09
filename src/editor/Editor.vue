@@ -66,7 +66,7 @@ watch(mountedFnList,
 <template>
   <div>
     <btnComponent />
-    <NButton v-model:value="text.data.content" />
+    <NInput v-model:value="text.data.content" />
     <NDynamicTags v-model:value="text.data.props.class" />
     <NSelect v-model:value="mountedFnList" multiple :options="ScriptStore.selectOptions" />
   </div>

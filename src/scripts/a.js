@@ -3,5 +3,6 @@ export function changeBackground(){
 }
 
 export function changeTagType(){
-  this.props.type = 'primary'
+  this.props.type = 'warning'
+  this.props.size = 'large'
 }

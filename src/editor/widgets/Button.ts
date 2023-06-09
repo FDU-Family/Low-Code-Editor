@@ -1,5 +1,6 @@
 import type { ButtonData, ButtonOptions } from '@editor/types/widgets'
 import type { VNode } from 'vue'
+import { NButton } from 'naive-ui'
 import { Text } from './Text'
 
 export class Button extends Text {
@@ -8,12 +9,6 @@ export class Button extends Text {
 
   constructor(option: ButtonOptions) {
     super(option)
-    if (option.content) {
-      this.data.content = option.content
-    }
-    else {
-      this.data.content = 'hello'
-    }
 
     if (option.type) {
       this.data.type = option.type
@@ -31,10 +26,10 @@ export class Button extends Text {
   }
 
   static preview(): VNode {
-    return h('div', null, '按钮')
+    return h(NButton, null, '按钮')
   }
 
   protected _render(): VNode {
-    return h('div', this.data.props, super._render())
+    return h(NButton, this.data.props, super._render())
   }
 }
