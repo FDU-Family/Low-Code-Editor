@@ -44,3 +44,18 @@ export type TagData = TextData & {
 export type TagOptions = TextOptions & {
   type?: string
 }
+
+/**
+ * Button widget options type
+ */
+export type ButtonOptions = TextOptions & {
+  content?: string
+  type?: string
+  size?: string
+}
+
+export type ButtonData = TextData & {
+  content: string
+  type: string
+  size: string
+}

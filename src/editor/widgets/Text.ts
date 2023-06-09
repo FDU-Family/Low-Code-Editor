@@ -1,5 +1,6 @@
 import type { TextData, TextOptions } from '@editor/types/widgets'
 import type { VNode } from 'vue'
+import { h } from 'vue'
 import { Base } from './Base'
 
 export class Text extends Base {
@@ -13,7 +14,7 @@ export class Text extends Base {
       this.data.content = option.content
     }
     else {
-      this.data.content = '输入文字'
+      this.data.content = '文本Editor'
     }
   }
 
