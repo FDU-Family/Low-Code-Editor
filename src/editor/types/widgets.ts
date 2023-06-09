@@ -36,3 +36,11 @@ export type TextOptions = WidgetOptions & {
 export type TextData = WidgetData & {
   content: string
 }
+
+export type TagData = TextData & {
+  type: string
+}
+
+export type TagOptions = TextOptions & {
+  type?: string
+}

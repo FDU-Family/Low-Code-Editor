@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { difference } from 'lodash-es'
-import { Text } from './widgets/Text'
 import { useScriptStore } from './stores/ScriptStore'
+import { Tag } from './widgets/Tag'
 
 // new A text widget and render
-const text = new Text({})
-const textComponent = text.render()
+// const text = new Text({})
+// const textComponent = text.render()
+
+const text = new Tag({})
+const tagComp = text.render()
 
 const mountedFnList = ref([])
 
@@ -58,7 +61,7 @@ watch(mountedFnList, (newVal, oldVal) => {
 
 <template>
   <div>
-    <textComponent />
+    <tagComp />
     <NInput v-model:value="text.data.content" />
     <NDynamicTags v-model:value="text.data.props.class" />
     <NSelect v-model:value="mountedFnList" multiple :options="ScriptStore.selectOptions" />
