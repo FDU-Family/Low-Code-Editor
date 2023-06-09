@@ -1,0 +1,27 @@
+#editor-root {
+  /* 主要颜色 */
+  --c-primary: #BB2649;
+  /* 次要颜色 */
+  --c-secondary: #56447E;
+  /* 第三色 */
+  --c-tertiary: #7D0D27;
+  /* 强调色 */
+  --c-accent: #12E0C6;
+  /* 突出色 */
+  --c-highlight: #68EACA;
+  /* 灰色 */
+  --c-gray: #ABABAB;
+  /* 黑色 */
+  --c-black: #000000;
+  /* 白色 */
+  --c-white: #FFFFFF;
+  /* 深色 */
+  --c-dark: #171717;
+  /* 更深色 */
+  --c-darker: #1C1C1C;
+  /* 边框色 */
+  --c-border: #26252B;
+
+  --header-height: 60px;
+  --footer-height: 60px;
+}

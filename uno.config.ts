@@ -8,7 +8,9 @@ import {
 
 export default defineConfig({
   rules: [
-    ['m-1', { margin: '1px' }],
+  ],
+  shortcuts: [
+    { 'flex-center': 'flex justify-center items-center' },
   ],
   presets: [
     presetUno(),
