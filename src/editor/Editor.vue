@@ -86,7 +86,14 @@ const options: BarOption = [
       <NDynamicTags v-model:value="text.data.props.class" />
       <NSelect v-model:value="mountedFnList" multiple :options="ScriptStore.selectOptions" />
     </div> -->
-  <div id="editor-root" relative h-screen w-screen class="bg-$c-dark">
+  <div
+    id="editor-root"
+    relative
+    h-screen
+    w-screen
+    class="bg-$c-dark"
+    overflow="hidden"
+  >
     <e-header class="editor-header" />
     <e-content class="editor-content" />
     <e-footer class="editor-footer" />

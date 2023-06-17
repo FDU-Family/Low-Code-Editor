@@ -21,10 +21,10 @@ function active(index: number) {
 
 <template>
   <div id="e-bar">
-    <div position="relative">
+    <div relative>
       <div
         :class="isActivate ? 'e-bar-content-active' : ''"
-        position="absolute"
+        absolute
         overflow="hidden"
         z-998
         h-full
@@ -42,7 +42,12 @@ function active(index: number) {
               {{ options[actIndex].title }}
             </template>
             <template #header-right>
-              <div class="iconfont icon-icon-arrowhead-line" transform="rotate-180" />
+              <div
+                class="iconfont icon-icon-arrowhead-line"
+                transform="rotate-180"
+                cursor="pointer"
+                @click="active(actIndex)"
+              />
             </template>
             <Transition name="fade-side" mode="out-in">
               <template #default>
