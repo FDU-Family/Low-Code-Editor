@@ -9,7 +9,7 @@ const actIndex = ref(0)
 const isActivate = ref(false)
 
 function active(index: number) {
-  if (isActivate.value) {
+  if (isActivate.value && index === actIndex.value) {
     isActivate.value = false
   }
   else {
@@ -25,18 +25,25 @@ function active(index: number) {
       <div
         :class="isActivate ? 'e-bar-content-active' : ''"
         position="absolute"
+        overflow="hidden"
         z-998
         h-full
         w-full
         transition
-        overflow="hidden"
       >
-        <div class="e-bar-border-head" border-t-2pxborder-t-2px h-a w-300px>
-          <component :is="options[actIndex].content" />
+        <div
+          class="e-bar-border-head"
+          h-a
+          w-300px
+          border-t-2px
+        >
+          <Transition name="fade-side" mode="out-in">
+            <component :is="options[actIndex].content" />
+          </Transition>
         </div>
       </div>
     </div>
-    <div b class="border-t-2px" :class="isActivate ? 'e-bar-border-head' : ''">
+    <div border-t-2px :class="isActivate ? 'e-bar-border-head' : ''">
       <div
         v-for="item, index in options" :key="item.key"
         class="e-bar-icon"
@@ -66,7 +73,6 @@ function active(index: number) {
   transform: translateX(60px);
   width: 300px;
   height: auto;
-  z-index: 1000;
 }
 #e-bar .e-bar-border-head{
   border-top:2px solid var(--c-primary);

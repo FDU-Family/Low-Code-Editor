@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     EContent: typeof import('./src/editor/components/e-content.vue')['default']
     EFooter: typeof import('./src/editor/components/e-footer.vue')['default']
     EHeader: typeof import('./src/editor/components/e-header.vue')['default']
+    ETransistion: typeof import('./src/editor/components/e-transistion.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NDynamicTags: typeof import('naive-ui')['NDynamicTags']
     NInput: typeof import('naive-ui')['NInput']
