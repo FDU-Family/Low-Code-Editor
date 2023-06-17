@@ -23,7 +23,7 @@ function active(index: number) {
     <div relative h-full>
       <div
         :class="isActivate ? 'e-sidebar-hidden' : ''"
-        h-full w-full border-t-2px
+        h-full w-full border-t-2px transition
       >
         <div
           v-for="(item, index) in options" :key="item.key"
