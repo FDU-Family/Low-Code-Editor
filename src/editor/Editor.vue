@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import '@editor/styles/variable.css'
-import '@editor/styles/UI.css'
-
 // import { difference } from 'lodash-es'
 // import { useScriptStore } from './stores/ScriptStore'
 
