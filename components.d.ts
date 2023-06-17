@@ -10,7 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     copy: typeof import('./src/editor/components/e-header copy.vue')['default']
-    EBar: typeof import('./src/editor/components/e-bar.vue')['default']
+    EBar: typeof import('./src/editor/components/e-bar/e-bar.vue')['default']
     EContent: typeof import('./src/editor/components/e-content.vue')['default']
     EFooter: typeof import('./src/editor/components/e-footer.vue')['default']
     EHeader: typeof import('./src/editor/components/e-header.vue')['default']

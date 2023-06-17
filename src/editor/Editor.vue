@@ -50,6 +50,7 @@
 //       )
 //     }
 //   })
+import type { BarOption } from '@editor/components/e-bar/interface'
 
 const bar = ref()
 
@@ -62,6 +63,18 @@ const { style } = useDraggable(bar, {
     barState.value.y = position.y
   },
 })
+
+const options: BarOption = [
+  {
+    key: 1,
+    icon: 'icon-icon-branch',
+    content: () => h('div'),
+  }, {
+    key: 2,
+    icon: 'icon-icon-search',
+    content: () => h('div'),
+  },
+]
 </script>
 
 <template>
@@ -76,7 +89,7 @@ const { style } = useDraggable(bar, {
     <e-content class="editor-content" />
     <e-footer class="editor-footer" />
     <div ref="bar" absolute :style="style">
-      <e-bar />
+      <e-bar :options="options" />
     </div>
   </div>
 </template>
