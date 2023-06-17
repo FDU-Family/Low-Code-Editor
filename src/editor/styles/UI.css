@@ -1,7 +1,7 @@
 #editor-root * {
   border-color: var(--c-border);
   box-sizing: border-box;
-  background-color: var(--c-dark);
+  background-color: var(--c-darker-pro);
   color: var(--c-white);
 }
 

@@ -67,10 +67,12 @@ const { style } = useDraggable(bar, {
 const options: BarOption = [
   {
     key: 1,
+    title: '视图目录',
     icon: 'icon-icon-branch',
-    content: () => h('div'),
+    content: () => h('div', null, '123'),
   }, {
     key: 2,
+    title: '视图目录',
     icon: 'icon-icon-search',
     content: () => h('div'),
   },
