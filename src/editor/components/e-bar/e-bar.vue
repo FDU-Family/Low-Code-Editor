@@ -55,9 +55,9 @@ function active(index: number) {
 </template>
 
 <style>
-#e-bar *{
+#e-bar div * {
   box-sizing: content-box;
-  background-color: var(--c-darker);
+  background-color: var(--c-dark);
 }
 .e-bar-icon:not(:last-child) > div {
   border-bottom: 1px solid;

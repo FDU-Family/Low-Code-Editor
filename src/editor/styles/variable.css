@@ -16,11 +16,9 @@
   /* 白色 */
   --c-white: #FFFFFF;
   /* 深色 */
-  --c-dark: #171717;
+  --c-dark: #1C1C1C;
   /* 更深色 */
-  --c-darker: #1C1C1C;
-  /* 最深色 */
-  --c-darker-pro: #1E1E1E;
+  --c-darker: #171717;
   /* 边框色 */
   --c-border: #26252B;
 
