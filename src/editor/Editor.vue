@@ -72,7 +72,7 @@ const options: BarOption = [
     content: () => h('div', null, '123'),
   }, {
     key: 2,
-    title: '视图目录',
+    title: '搜索',
     icon: 'icon-icon-search',
     content: () => h('div', null, '456'),
   },

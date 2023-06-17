@@ -19,3 +19,15 @@
   height: calc(100% - var(--header-height) - var(--footer-height));
   width: 100%;
 }
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 20px;
+}
+
+.text-xs {
+  font-size: 12px;
+}

@@ -37,9 +37,19 @@ function active(index: number) {
           w-300px
           border-t-2px
         >
-          <Transition name="fade-side" mode="out-in">
-            <component :is="options[actIndex].content" />
-          </Transition>
+          <e-card>
+            <template #header-left>
+              {{ options[actIndex].title }}
+            </template>
+            <template #header-right>
+              <div class="iconfont icon-icon-arrowhead-line" transform="rotate-180" />
+            </template>
+            <Transition name="fade-side" mode="out-in">
+              <template #default>
+                <component :is="options[actIndex].content" />
+              </template>
+            </Transition>
+          </e-card>
         </div>
       </div>
     </div>
