@@ -20,42 +20,40 @@ function active(index: number) {
 </script>
 
 <template>
-  <div id="e-bar">
-    <div relative>
+  <div id="e-bar" relative>
+    <div
+      :class="isActivate ? 'e-bar-content-active' : ''"
+      absolute
+      overflow="hidden"
+      z-998
+      h-full
+      w-full
+      transition
+    >
       <div
-        :class="isActivate ? 'e-bar-content-active' : ''"
-        absolute
-        overflow="hidden"
-        z-998
-        h-full
-        w-full
-        transition
+        class="e-bar-border-head"
+        h-a
+        w-300px
+        border-t-2px
       >
-        <div
-          class="e-bar-border-head"
-          h-a
-          w-300px
-          border-t-2px
-        >
-          <e-card>
-            <template #header-left>
-              {{ options[actIndex].title }}
+        <e-card>
+          <template #header-left>
+            {{ options[actIndex].title }}
+          </template>
+          <template #header-right>
+            <div
+              class="iconfont icon-icon-arrowhead-line"
+              transform="rotate-180"
+              cursor="pointer"
+              @click="active(actIndex)"
+            />
+          </template>
+          <Transition name="fade-side" mode="out-in">
+            <template #default>
+              <component :is="options[actIndex].content" />
             </template>
-            <template #header-right>
-              <div
-                class="iconfont icon-icon-arrowhead-line"
-                transform="rotate-180"
-                cursor="pointer"
-                @click="active(actIndex)"
-              />
-            </template>
-            <Transition name="fade-side" mode="out-in">
-              <template #default>
-                <component :is="options[actIndex].content" />
-              </template>
-            </Transition>
-          </e-card>
-        </div>
+          </Transition>
+        </e-card>
       </div>
     </div>
     <div border-t-2px :class="isActivate ? 'e-bar-border-head' : ''">
