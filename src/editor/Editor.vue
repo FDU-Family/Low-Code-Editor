@@ -51,6 +51,7 @@
 //     }
 //   })
 import type { BarOption } from '@editor/components/e-bar/interface'
+import type { SideBarOption } from './components/e-sidebar/interface'
 
 const bar = ref()
 
@@ -77,6 +78,37 @@ const options: BarOption = [
     content: () => h('div', null, '456'),
   },
 ]
+
+const sidebarOptions: SideBarOption = [
+  {
+    key: 1,
+    title: '',
+    icon: 'icon-icon-packing',
+    content: () => h('div'),
+  },
+  {
+    key: 2,
+    title: '组件库',
+    icon: 'icon-icon-components',
+    content: () => h('div'),
+  }, {
+    key: 3,
+    title: '样式',
+    icon: 'icon-icon-coding-style',
+    content: () => h('div'),
+  },
+  {
+    key: 4,
+    title: '变量',
+    icon: 'icon-icon-variable',
+    content: () => h('div'),
+  }, {
+    key: 5,
+    title: '脚本',
+    icon: 'icon-icon-coding-script',
+    content: () => h('div'),
+  },
+]
 </script>
 
 <template>
@@ -95,7 +127,10 @@ const options: BarOption = [
     overflow="hidden"
   >
     <e-header class="editor-header" />
-    <e-content class="editor-content" />
+    <div class="editor-content" relative>
+      <e-content />
+      <e-sidebar class="editor-sidebar" :options="sidebarOptions" absolute right-0 top-0 />
+    </div>
     <e-footer class="editor-footer" />
     <div ref="bar" absolute :style="style">
       <e-bar :options="options" />
@@ -103,4 +138,5 @@ const options: BarOption = [
   </div>
 </template>
 
-<style></style>
+<style>
+</style>
