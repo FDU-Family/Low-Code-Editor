@@ -4,17 +4,24 @@ import type { SideBarOption } from './interface'
 defineProps<{
   options: SideBarOption
 }>()
-const actIndex = ref(0)
-const isActivate = ref(false)
+const actIndex = ref(-1)
+const isActivate = ref(true)
+const iconActivate = ref('')
 
 function active(index: number) {
-  if (isActivate.value) {
-    isActivate.value = false
+  if (index === 0) {
+    isActivate.value = !isActivate.value
+    if (isActivate.value) { // true
+      iconActivate.value = ''
+    }
+    else {
+      iconActivate.value = 'icon-hf-activate'
+    }
   }
   else {
-    isActivate.value = true
-    actIndex.value = index
+    iconActivate.value = 'icon-activate'
   }
+  actIndex.value = index
 }
 </script>
 
@@ -33,7 +40,7 @@ function active(index: number) {
           @click="active(index)"
         >
           <div ma h-60px w-160px flex flex-row flex-items-center>
-            <div class="iconfont" mr-5px :class="item.icon" />
+            <div class="iconfont" mr-5px :class="[item.icon, actIndex === index ? iconActivate : '']" />
             <div ml-5px>
               {{ item.title }}
             </div>
@@ -52,6 +59,14 @@ function active(index: number) {
 }
 .e-sidebar-icon:not(:last-child) > div {
   border-bottom: 1px solid;
+}
+
+#e-sidebar .icon-hf-activate {
+  transform: rotate(180deg);
+}
+
+#e-sidebar .icon-activate {
+  color: var(--c-primary);
 }
 
 #e-sidebar .e-sidebar-hidden {
