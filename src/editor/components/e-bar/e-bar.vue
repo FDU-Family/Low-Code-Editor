@@ -28,7 +28,7 @@ function active(index: number) {
       z-998
       h-full
       w-full
-      transition
+      transition-all
     >
       <div
         class="e-bar-border-head"
