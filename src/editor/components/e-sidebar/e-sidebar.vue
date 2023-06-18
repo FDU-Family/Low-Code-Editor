@@ -7,10 +7,12 @@ defineProps<{
 const actIndex = ref(-1)
 const isActivate = ref(true)
 const iconActivate = ref('')
+const isExpansion = ref(false)
 
 function active(index: number) {
   if (index === 0) {
     isActivate.value = !isActivate.value
+    isExpansion.value = !isExpansion.value
     if (isActivate.value) { // true
       iconActivate.value = ''
     }
@@ -40,7 +42,7 @@ function active(index: number) {
           @click="active(index)"
         >
           <div ma h-60px w-160px flex flex-row flex-items-center>
-            <div class="iconfont" mr-5px :class="[item.icon, actIndex === index ? iconActivate : '']" />
+            <div class="iconfont" mr-5px :class="[item.icon, actIndex === index ? iconActivate : '', (index === 0 && isExpansion) ? 'icon-expansion-activate' : '']" />
             <div ml-5px>
               {{ item.title }}
             </div>
@@ -62,6 +64,10 @@ function active(index: number) {
 }
 
 #e-sidebar .icon-hf-activate {
+  transform: rotate(180deg);
+  color: var(--c-primary);
+}
+#e-sidebar .icon-expansion-activate {
   transform: rotate(180deg);
 }
 
