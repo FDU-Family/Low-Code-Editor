@@ -1,8 +1,10 @@
-#editor-root * {
-  border-color: var(--c-border);
-  box-sizing: border-box;
-  background-color: var(--c-darker);
-  color: var(--c-white);
+div,
+span,
+i{
+border-color: var(--c-border);
+box-sizing: border-box;
+background-color: var(--c-darker);
+color: var(--c-white);
 }
 
 .editor-header {
