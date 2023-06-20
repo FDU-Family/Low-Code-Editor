@@ -95,7 +95,7 @@ function taskShown(index: number) {
 }
 
 .e-sidebar-icon {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--c-border);
 }
 
 #e-sidebar .e-sidebar-active-icon {

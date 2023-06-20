@@ -80,7 +80,7 @@ function active(index: number) {
   background-color: var(--c-dark);
 }
 .e-bar-icon:not(:last-child) > div {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--c-border);
 }
 #e-bar .e-bar-content-active{
   transform: translateX(60px);
