@@ -36,3 +36,7 @@
 .text-xs {
   font-size: 12px;
 }
+
+.editor-icon-size {
+  width: var(--icon-size);
+}
