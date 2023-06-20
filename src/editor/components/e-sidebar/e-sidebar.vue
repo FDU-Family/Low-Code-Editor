@@ -4,9 +4,10 @@ import type { SideBarOption } from './interface'
 defineProps<{
   options: SideBarOption
 }>()
-const actIndex = ref(0)
+const actIndex = ref(-1)
 const drawerClosed = ref(true)
 const taskClosed = ref(true)
+
 function drawerActivate() {
   drawerClosed.value = !drawerClosed.value
 }
@@ -48,7 +49,7 @@ function taskShown(index: number) {
               </template>
               <template #default>
                 <Transition name="fade-side" mode="out-in">
-                  <component :is="options[actIndex].content" />
+                  <component :is="options[actIndex].content" v-if="actIndex >= 0" />
                 </Transition>
               </template>
             </e-card>
@@ -66,7 +67,7 @@ function taskShown(index: number) {
             v-for="(item, index) in options"
             :key="item.key"
             class="e-sidebar-icon"
-            :class="actIndex === index ? 'icon-activate' : ''"
+            :class="(actIndex === index && !taskClosed) ? 'icon-activate' : ''"
             cursor="pointer"
             flex
             items-center
