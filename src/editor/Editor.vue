@@ -82,31 +82,25 @@ const options: BarOption = [
 const sidebarOptions: SideBarOption = [
   {
     key: 1,
-    title: '',
-    icon: 'icon-icon-packing',
-    content: () => h('div'),
-  },
-  {
-    key: 2,
     title: '组件库',
     icon: 'icon-icon-components',
-    content: () => h('div'),
+    content: () => h('div', null, '组件库'),
   }, {
-    key: 3,
+    key: 2,
     title: '样式',
     icon: 'icon-icon-coding-style',
-    content: () => h('div'),
+    content: () => h('div', null, '样式'),
   },
   {
-    key: 4,
+    key: 3,
     title: '变量',
     icon: 'icon-icon-variable',
-    content: () => h('div'),
+    content: () => h('div', null, '变量'),
   }, {
-    key: 5,
+    key: 4,
     title: '脚本',
     icon: 'icon-icon-coding-script',
-    content: () => h('div'),
+    content: () => h('div', null, '脚本'),
   },
 ]
 </script>

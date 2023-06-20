@@ -5,25 +5,21 @@ defineProps<{
   options: SideBarOption
 }>()
 const actIndex = ref(-1)
-const isActivate = ref(true)
-const iconActivate = ref('')
-const isExpansion = ref(false)
+const drawerClosed = ref(true)
+const taskClosed = ref(true)
 
-function active(index: number) {
-  if (index === 0) {
-    isActivate.value = !isActivate.value
-    isExpansion.value = !isExpansion.value
-    if (isActivate.value) { // true
-      iconActivate.value = ''
-    }
-    else {
-      iconActivate.value = 'icon-hf-activate'
-    }
+function drawerActivate() {
+  drawerClosed.value = !drawerClosed.value
+}
+
+function taskShown(index: number) {
+  if (actIndex.value === index && taskClosed.value === false) {
+    taskClosed.value = true
   }
   else {
-    iconActivate.value = 'icon-activate'
+    taskClosed.value = false
+    actIndex.value = index
   }
-  actIndex.value = index
 }
 </script>
 
@@ -31,19 +27,58 @@ function active(index: number) {
   <div id="e-sidebar">
     <div relative h-full>
       <div
-        :class="isActivate ? 'e-sidebar-hidden' : ''"
-        h-full w-full border-t-2px transition
+        :class="drawerClosed ? 'e-sidebar-hidden' : ''"
+        relative
+        z-999
+        h-full
+        w-full
+        p-20px
+        transition
       >
         <div
-          v-for="(item, index) in options" :key="item.key"
-          class="e-sidebar-icon"
-          cursor="pointer"
-          relative z-999 flex-row
-          @click="active(index)"
+          :class="taskClosed ? '' : 'e-sidebar-task-active'"
+          absolute left-0 top-0 z-998 h-full w-360px overflow="hidden" transition
         >
-          <div ma h-60px w-160px flex flex-row flex-items-center>
-            <div class="iconfont" mr-5px :class="[item.icon, actIndex === index ? iconActivate : '', (index === 0 && isExpansion) ? 'icon-expansion-activate' : '']" />
-            <div ml-5px>
+          <div>
+            <e-card>
+              <template #header-left>
+                left
+              </template>
+              <template #header-right>
+                right
+              </template>
+              <template #default>
+                <Transition name="fade-side" mode="out-in">
+                  <component :is="options[actIndex].content" v-if="actIndex >= 0" />
+                </Transition>
+              </template>
+            </e-card>
+          </div>
+        </div>
+        <div relative z-999>
+          <div
+            :class="drawerClosed ? '' : 'e-sidebar-active-icon'"
+            class="iconfont icon-icon-packing editor-icon-size"
+            cursor-pointer
+            transition
+            @click="drawerActivate()"
+          />
+          <div
+            v-for="(item, index) in options"
+            :key="item.key"
+            class="e-sidebar-icon"
+            :class="(actIndex === index && !taskClosed) ? 'icon-activate' : ''"
+            cursor="pointer"
+            flex
+            items-center
+            transition
+            @click="taskShown(index)"
+          >
+            <div
+              class="iconfont editor-icon-size"
+              :class="item.icon"
+            />
+            <div ml-10px>
               {{ item.title }}
             </div>
           </div>
@@ -56,28 +91,32 @@ function active(index: number) {
 
 <style>
 #e-sidebar div * {
-  box-sizing: content-box;
   background-color: var(--c-dark);
 }
-.e-sidebar-icon:not(:last-child) > div {
+
+.e-sidebar-icon {
   border-bottom: 1px solid;
 }
 
-#e-sidebar .icon-hf-activate {
-  transform: rotate(180deg);
-  color: var(--c-primary);
-}
-#e-sidebar .icon-expansion-activate {
-  transform: rotate(180deg);
+#e-sidebar .e-sidebar-active-icon {
+  transform: scaleX(-1);
+  color: var(--c-secondary);
 }
 
-#e-sidebar .icon-activate {
+#e-sidebar .e-sidebar-task-active {
+  transform: translateX(-360px);
+}
+
+#e-sidebar .icon-activate,
+#e-sidebar .icon-activate > div {
   color: var(--c-primary);
+  border-color: var(--c-primary);
 }
 
 #e-sidebar .e-sidebar-hidden {
   transform: translateX(130px);
 }
+
 #e-sidebar .line {
   background-color: var(--c-dark);
 }

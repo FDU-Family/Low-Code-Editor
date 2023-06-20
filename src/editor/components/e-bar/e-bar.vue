@@ -48,11 +48,11 @@ function active(index: number) {
               @click="active(actIndex)"
             />
           </template>
-          <Transition name="fade-side" mode="out-in">
-            <template #default>
+          <template #default>
+            <Transition name="fade-side" mode="out-in">
               <component :is="options[actIndex].content" />
-            </template>
-          </Transition>
+            </Transition>
+          </template>
         </e-card>
       </div>
     </div>
