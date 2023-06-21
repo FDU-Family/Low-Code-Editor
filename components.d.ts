@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     EFooter: typeof import('./src/editor/components/e-footer.vue')['default']
     EHeader: typeof import('./src/editor/components/e-header.vue')['default']
     ESidebar: typeof import('./src/editor/components/e-sidebar/e-sidebar.vue')['default']
+    NGradientText: typeof import('naive-ui')['NGradientText']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Test: typeof import('./src/editor/components/test.vue')['default']

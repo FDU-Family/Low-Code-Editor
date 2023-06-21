@@ -125,7 +125,7 @@ const sidebarOptions: SideBarOption = [
       <e-content />
       <e-sidebar class="editor-sidebar" :options="sidebarOptions" absolute right-0 top-0 />
     </div>
-    <e-footer class="editor-footer" />
+    <e-footer class="editor-footer" border-t />
     <div ref="bar" absolute :style="style">
       <e-bar :options="options" />
     </div>
