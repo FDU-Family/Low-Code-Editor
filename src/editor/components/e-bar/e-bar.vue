@@ -49,7 +49,7 @@ function active(index: number) {
             />
           </template>
           <template #default>
-            <Transition name="fade-side" mode="out-in">
+            <Transition name="fade-side-right" mode="out-in">
               <component :is="options[actIndex].content" />
             </Transition>
           </template>

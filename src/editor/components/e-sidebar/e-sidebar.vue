@@ -48,7 +48,7 @@ function taskShown(index: number) {
                 right
               </template>
               <template #default>
-                <Transition name="fade-side" mode="out-in">
+                <Transition name="fade-side-right" mode="out-in">
                   <component :is="options[actIndex].content" v-if="actIndex >= 0" />
                 </Transition>
               </template>
