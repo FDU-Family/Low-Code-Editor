@@ -9,6 +9,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import VueDevTools from 'vite-plugin-vue-devtools'
 import { watchFile } from './plugins/vite-plugin-watch-file'
 
 export default defineConfig({
@@ -19,6 +20,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    VueDevTools(),
     VueMacros({
       defineOptions: false,
       defineModels: false,
