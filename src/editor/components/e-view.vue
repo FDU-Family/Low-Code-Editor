@@ -12,11 +12,7 @@ const dragOption = {
 
 <template>
   <div>
-    <div v-drag="dragOption">
-      <div>123</div>
-      <div>123</div>
-      <div>123</div>
-    </div>
+    <div v-drag="dragOption" />
   </div>
 </template>
 

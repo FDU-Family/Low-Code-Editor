@@ -1,10 +1,9 @@
-div,
-span,
-i{
+.editor-ui{
 border-color: var(--c-border);
 box-sizing: border-box;
 background-color: var(--c-darker);
 color: var(--c-white);
+font-size: 16px;
 }
 
 .editor-header {

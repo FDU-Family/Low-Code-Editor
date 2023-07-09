@@ -20,7 +20,7 @@ function active(index: number) {
 </script>
 
 <template>
-  <div id="e-bar" relative>
+  <div id="e-bar" relative class="e-bar e-bar-ui">
     <div
       :class="isActivate ? 'e-bar-content-active' : ''"
       absolute
@@ -31,7 +31,7 @@ function active(index: number) {
       transition-all
     >
       <div
-        class="e-bar-border-head"
+        class="e-bar-ui e-bar-border-head"
         h-a
         w-300px
         border-t-2px
@@ -56,10 +56,10 @@ function active(index: number) {
         </e-card>
       </div>
     </div>
-    <div border-t-2px :class="isActivate ? 'e-bar-border-head' : ''">
+    <div border-t-2px :class="isActivate ? 'e-bar-border-head' : ''" class="e-bar-ui">
       <div
         v-for="item, index in options" :key="item.key"
-        class="e-bar-icon"
+        class="e-bar-ui e-bar-icon"
         cursor="pointer"
         z-999
         w-60px
@@ -75,19 +75,19 @@ function active(index: number) {
 </template>
 
 <style>
-#e-bar div * {
+.e-bar-ui{
   box-sizing: content-box;
   background-color: var(--c-dark);
 }
 .e-bar-icon:not(:last-child) > div {
   border-bottom: 1px solid var(--c-border);
 }
-#e-bar .e-bar-content-active{
+.e-bar .e-bar-content-active{
   transform: translateX(60px);
   width: 300px;
   height: auto;
 }
-#e-bar .e-bar-border-head{
+.e-bar .e-bar-border-head{
   border-top:2px solid var(--c-primary);
 }
 </style>

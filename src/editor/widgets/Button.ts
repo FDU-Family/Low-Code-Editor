@@ -26,7 +26,7 @@ export class Button extends Text {
   }
 
   static preview(): VNode {
-    return h(NButton, null, '按钮')
+    return h(NButton, { type: 'primary' }, () => '按钮')
   }
 
   protected _render(): VNode {

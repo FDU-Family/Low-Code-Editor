@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { vDrag } from '@editor/directives'
+import { Button } from '@editor/widgets'
 
 const dragOption = {
   group: 'editor',
@@ -8,14 +9,14 @@ const dragOption = {
   debounceTimeout: 300,
   shakeRange: 3,
 }
+
+const buttonPreview = Button.preview()
 </script>
 
 <template>
   <div>
     <div v-drag="dragOption">
-      <div>asd</div>
-      <div>asd</div>
-      <div>asd</div>
+      <buttonPreview />
     </div>
   </div>
 </template>

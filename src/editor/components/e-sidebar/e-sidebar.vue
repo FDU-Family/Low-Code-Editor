@@ -24,10 +24,11 @@ function taskShown(index: number) {
 </script>
 
 <template>
-  <div id="e-sidebar">
+  <div id="e-sidebar" class="e-sidebar">
     <div relative h-full>
       <div
         :class="drawerClosed ? 'e-sidebar-hidden' : ''"
+        class="e-sidebar-ui"
         relative
         z-999
         h-full
@@ -37,7 +38,8 @@ function taskShown(index: number) {
       >
         <div
           :class="taskClosed ? '' : 'e-sidebar-task-active'"
-          absolute left-0 top-0 z-998 h-full w-360px overflow="hidden" transition
+          class="e-sidebar-ui"
+          absolute left-0 top-0 z-997 h-full w-360px overflow="hidden" transition
         >
           <div>
             <e-card>
@@ -55,7 +57,7 @@ function taskShown(index: number) {
             </e-card>
           </div>
         </div>
-        <div relative z-999>
+        <div relative z-999 class="e-sidebar-ui">
           <div
             :class="drawerClosed ? '' : 'e-sidebar-active-icon'"
             class="iconfont icon-icon-packing editor-icon-size"
@@ -90,7 +92,7 @@ function taskShown(index: number) {
 </template>
 
 <style>
-#e-sidebar div * {
+.e-sidebar-ui {
   background-color: var(--c-dark);
 }
 

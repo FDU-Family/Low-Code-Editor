@@ -19,4 +19,9 @@ const router = createRouter({
 })
 app.use(router)
 app.use(createPinia())
+
+const meta = document.createElement('meta')
+meta.name = 'naive-ui-style'
+document.head.appendChild(meta)
+
 app.mount('#app')

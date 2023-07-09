@@ -118,15 +118,15 @@ const sidebarOptions: SideBarOption = [
     relative
     h-screen
     w-screen
-    class="bg-$c-dark"
+    class="editor-ui bg-$c-dark"
     overflow="hidden"
   >
-    <e-header class="editor-header" />
-    <div class="editor-content" relative>
-      <e-view class="editor-view" />
-      <e-sidebar class="editor-sidebar" :options="sidebarOptions" absolute right-0 top-0 />
+    <e-header class="editor-ui editor-header" />
+    <div class="editor-ui editor-content" relative>
+      <e-view class="editor-ui editor-view" />
+      <e-sidebar class="editor-ui editor-sidebar" :options="sidebarOptions" absolute right-0 top-0 />
     </div>
-    <e-footer class="editor-footer" border-t />
+    <e-footer class="editor-ui editor-footer" border-t />
     <div ref="bar" absolute :style="style">
       <e-bar :options="options" />
     </div>
