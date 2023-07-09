@@ -9,12 +9,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ComLib: typeof import('./src/editor/components/e-sidebar/components/com-lib.vue')['default']
     EBar: typeof import('./src/editor/components/e-bar/e-bar.vue')['default']
     ECard: typeof import('./src/editor/components/e-card/e-card.vue')['default']
     EContent: typeof import('./src/editor/components/e-content.vue')['default']
     EFooter: typeof import('./src/editor/components/e-footer.vue')['default']
     EHeader: typeof import('./src/editor/components/e-header.vue')['default']
     ESidebar: typeof import('./src/editor/components/e-sidebar/e-sidebar.vue')['default']
+    EView: typeof import('./src/editor/components/e-view.vue')['default']
     NGradientText: typeof import('naive-ui')['NGradientText']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

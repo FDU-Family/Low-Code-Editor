@@ -22,6 +22,11 @@ color: var(--c-white);
   width: 100%;
 }
 
+.editor-view{
+  height: 100%;
+  width: calc(100% - 70px);
+}
+
 .editor-sidebar {
   width: var(--sidebar-width);
   height: 100%;

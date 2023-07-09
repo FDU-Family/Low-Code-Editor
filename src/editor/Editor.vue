@@ -51,7 +51,8 @@
 //     }
 //   })
 import type { BarOption } from '@editor/components/e-bar/interface'
-import type { SideBarOption } from './components/e-sidebar/interface'
+import type { SideBarOption } from '@editor/components/e-sidebar/interface'
+import ComLib from '@editor/components/e-sidebar/components/com-lib.vue'
 
 const bar = ref()
 
@@ -84,7 +85,7 @@ const sidebarOptions: SideBarOption = [
     key: 1,
     title: '组件库',
     icon: 'icon-icon-components',
-    content: () => h('div', null, '组件库'),
+    content: () => h(ComLib),
   }, {
     key: 2,
     title: '样式',
@@ -122,7 +123,7 @@ const sidebarOptions: SideBarOption = [
   >
     <e-header class="editor-header" />
     <div class="editor-content" relative>
-      <e-content />
+      <e-view class="editor-view" />
       <e-sidebar class="editor-sidebar" :options="sidebarOptions" absolute right-0 top-0 />
     </div>
     <e-footer class="editor-footer" border-t />
