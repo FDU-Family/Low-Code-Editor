@@ -42,10 +42,10 @@ function taskShown(index: number) {
           <div>
             <e-card>
               <template #header-left>
-                left
+                <div class="iconfont icon-icon-packing" scale-x--100 cursor-pointer @click="taskClosed = true" />
               </template>
               <template #header-right>
-                right
+                {{ options[actIndex]?.title }}
               </template>
               <template #default>
                 <Transition name="fade-side-right" mode="out-in">
