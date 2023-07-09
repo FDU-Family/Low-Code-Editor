@@ -5,14 +5,16 @@ const dragOption = {
   group: 'editor',
   animation: 150,
   debounce: true,
-  debounceTimeout: 300,
+  debounceTimeout: 150,
   shakeRange: 3,
 }
 </script>
 
 <template>
   <div>
-    <div v-drag="dragOption" />
+    <div v-drag="dragOption" h-full w-full>
+      <div />
+    </div>
   </div>
 </template>
 

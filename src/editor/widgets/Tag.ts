@@ -18,7 +18,7 @@ export class Tag extends Text {
   }
 
   static preview(): VNode {
-    return h(NTag, null, '标签')
+    return h(NTag, { type: 'info' }, () => '标签')
   }
 
   protected _render(): VNode {

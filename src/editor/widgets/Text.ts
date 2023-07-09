@@ -16,10 +16,12 @@ export class Text extends Base {
     else {
       this.data.content = '文本Editor'
     }
+
+    this.data.props.class.push('widget-text')
   }
 
   static preview(): VNode {
-    return h('div', null, '按钮')
+    return h('div', { class: 'widget-text' }, '按钮')
   }
 
   protected _render(): VNode {

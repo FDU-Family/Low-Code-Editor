@@ -1,9 +1,9 @@
-.editor-ui{
-border-color: var(--c-border);
-box-sizing: border-box;
-background-color: var(--c-darker);
-color: var(--c-white);
-font-size: 16px;
+.editor-ui {
+  border-color: var(--c-border);
+  box-sizing: border-box;
+  background-color: var(--c-darker);
+  color: var(--c-white);
+  font-size: 16px;
 }
 
 .editor-header {
@@ -21,7 +21,7 @@ font-size: 16px;
   width: 100%;
 }
 
-.editor-view{
+.editor-view {
   height: 100%;
   width: calc(100% - 70px);
 }
@@ -45,4 +45,8 @@ font-size: 16px;
 
 .editor-icon-size {
   width: var(--icon-size);
+}
+
+.widget-text {
+  display: inline-block;
 }
