@@ -22,7 +22,7 @@ function active(index: number) {
 <template>
   <div id="e-bar" relative class="e-bar e-bar-ui">
     <div
-      :class="isActivate ? 'e-bar-content-active' : ''"
+      :class="isActivate ? 'e-bar-content-active ' : ''"
       absolute
       overflow="hidden"
       z-998
@@ -31,10 +31,10 @@ function active(index: number) {
       transition-all
     >
       <div
-        class="e-bar-ui e-bar-border-head"
+        class="e-bar-ui"
+        :class="isActivate ? 'e-bar-border-head' : ''"
         h-a
         w-300px
-        border-t-2px
       >
         <e-card>
           <template #header-left>
@@ -42,7 +42,7 @@ function active(index: number) {
           </template>
           <template #header-right>
             <div
-              class="iconfont icon-icon-arrowhead-line"
+              class="iconfont icon-icon-arrowhead-line c-$c-primary"
               transform="rotate-180"
               cursor="pointer"
               @click="active(actIndex)"
@@ -56,14 +56,16 @@ function active(index: number) {
         </e-card>
       </div>
     </div>
-    <div border-t-2px :class="isActivate ? 'e-bar-border-head' : ''" class="e-bar-ui">
+    <div border-t-2px class="e-bar-ui e-bar-border-head">
       <div
         v-for="item, index in options" :key="item.key"
         class="e-bar-ui e-bar-icon"
+        :class="index === actIndex && isActivate ? 'c-$c-primary' : ''"
         cursor="pointer"
         z-999
         w-60px
         position="relative"
+        transition="colors"
         @click="active(index)"
       >
         <div ma h-60px w-30px flex-center>

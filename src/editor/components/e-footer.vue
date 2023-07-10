@@ -8,10 +8,10 @@ function msgComponent(msg: string, time: string) {
     class: 'e-footer-msg-container h-full flex items-center justify-between',
   }, [
     h('div', {
-      class: 'text-xs ml-10px flex items-center c-$c-gray',
+      class: 'text-xs ml-10px flex items-center c-$c-gray select-text',
     }, msg),
     h('div', {
-      class: 'text-xs c-$c-gray',
+      class: 'text-xs c-$c-gray select-text',
     }, time),
   ])
 }

@@ -1,3 +1,9 @@
+div,
+span,
+button {
+  user-select: none;
+}
+
 .editor-ui {
   border-color: var(--c-border);
   box-sizing: border-box;

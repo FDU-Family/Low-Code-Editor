@@ -28,7 +28,7 @@ function taskShown(index: number) {
     <div relative h-full>
       <div
         :class="drawerClosed ? 'e-sidebar-hidden' : ''"
-        class="e-sidebar-ui"
+        class="bg-$c-dark"
         relative
         z-999
         h-full
@@ -38,16 +38,16 @@ function taskShown(index: number) {
       >
         <div
           :class="taskClosed ? '' : 'e-sidebar-task-active'"
-          class="e-sidebar-ui"
+          class="bg-$c-dark"
           absolute left-0 top-0 z-997 h-full w-360px overflow="hidden" transition
         >
           <div>
             <e-card>
               <template #header-left>
-                <div class="iconfont icon-icon-packing" scale-x--100 cursor-pointer @click="taskClosed = true" />
+                <div class="iconfont icon-icon-packing c-$c-secondary" scale-x--100 cursor-pointer @click="taskClosed = true" />
               </template>
               <template #header-right>
-                {{ options[actIndex]?.title }}
+                <span class="font-600 c-$c-secondary">{{ options[actIndex]?.title }}</span>
               </template>
               <template #default>
                 <Transition name="fade-side-right" mode="out-in">
@@ -57,19 +57,23 @@ function taskShown(index: number) {
             </e-card>
           </div>
         </div>
-        <div relative z-999 class="e-sidebar-ui">
+        <div relative z-999 class="bg-$c-dark">
           <div
-            :class="drawerClosed ? '' : 'e-sidebar-active-icon'"
-            class="iconfont icon-icon-packing editor-icon-size"
+            class="editor-icon-size&quot;"
+            b-b="2px $c-border"
+            flex
             cursor-pointer
             transition
             @click="drawerActivate()"
-          />
+          >
+            <div class="iconfont icon-icon-packing" :class="drawerClosed ? '' : 'scale-x--100 c-$c-secondary'" transition />
+          </div>
           <div
             v-for="(item, index) in options"
             :key="item.key"
             class="e-sidebar-icon"
-            :class="(actIndex === index && !taskClosed) ? 'icon-activate' : ''"
+            b-b="2px $c-border"
+            :class="(actIndex === index && !taskClosed) ? 'c-$c-primary b-b-$c-primary' : ''"
             cursor="pointer"
             flex
             items-center
@@ -86,40 +90,17 @@ function taskShown(index: number) {
           </div>
         </div>
       </div>
-      <div class="line" absolute right-0 top-0 z-1000 h-full w-20px />
+      <div class="bg-$c-dark" absolute right-0 top-0 z-1000 h-full w-20px />
     </div>
   </div>
 </template>
 
 <style>
-.e-sidebar-ui {
-  background-color: var(--c-dark);
-}
-
-.e-sidebar-icon {
-  border-bottom: 1px solid var(--c-border);
-}
-
-#e-sidebar .e-sidebar-active-icon {
-  transform: scaleX(-1);
-  color: var(--c-secondary);
-}
-
 #e-sidebar .e-sidebar-task-active {
   transform: translateX(-360px);
 }
 
-#e-sidebar .icon-activate,
-#e-sidebar .icon-activate > div {
-  color: var(--c-primary);
-  border-color: var(--c-primary);
-}
-
 #e-sidebar .e-sidebar-hidden {
   transform: translateX(130px);
-}
-
-#e-sidebar .line {
-  background-color: var(--c-dark);
 }
 </style>
